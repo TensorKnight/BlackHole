@@ -1,6 +1,6 @@
 [project]
-name = "automate"
-version = "0.0.1"
+name="neptune-automate"
+version = "0.0.14"
 authors = [
   { name = "Vrushal More", email = "vrushal.more.work@gmail.com" }
 ]
