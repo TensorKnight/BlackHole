@@ -49,9 +49,9 @@ Use ARIMA, SARIMA, or SARIMAX for time series analysis:
 
 from automate.statistical_models import Statistics_Models
 
-Statistics_Models.apply_ARIMA(data_clean, 1, 1, 0, 'Target_variable ')
-Statistics_Models.apply_SARIMA(data_clean, 1, 1, 0, 'Target_variable ')
-Statistics_Models.apply_SARIMAX(data_clean, 1, 1, 0, 'Target_variable ', exog_vars=['variable_1', 'variable_2', 'variable_3'])
+Statistics_Models.apply_ARIMA(data_clean, p, d, q, 'Target_variable')
+Statistics_Models.apply_SARIMA(data_clean, p, d, q, 'Target_variable')
+Statistics_Models.apply_SARIMAX(data_clean, p, d, q, 'Target_variable', exog_vars=['variable_1', 'variable_2', 'variable_3'])
 
 ```
 
@@ -83,14 +83,14 @@ Convert your time series data to stationary:
 
 from automate.augmented_dickey_fuller_test import Stationary_Converter
 
-stationary_data = Stationary_Converter.convert_to_stationary(data_clean['Target_variable '])
+stationary_data = Stationary_Converter.convert_to_stationary(data_clean['Target_variable'])
 Augmented_Dickey_Fuller_Test.check_stationarity(stationary_data)
 
 ```
 
 ### Note
 
-This module currently only works for Non-Categorical Time Series Data
+This module currently only works for Non-Categorical Time Series Data.
 
 ### Requirements.txt
 
