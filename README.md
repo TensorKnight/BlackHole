@@ -2,8 +2,6 @@
 ### Description
 Simplify your machine learning code with this module
 
----
-
 ### Install
 To install the module use:
 
@@ -24,6 +22,8 @@ data_clean = Null_Value_Remover.remove_null_value(data, data['Timestamp_or_Categ
 
 ```
 
+---
+
 Apply different machine learning models:
 
 ```bash
@@ -43,6 +43,8 @@ Machine_Learning_Models.apply_XGB(X, y)
 
 ```
 
+---
+
 Use ARIMA, SARIMA, or SARIMAX for time series analysis:
 
 ```bash
@@ -54,6 +56,8 @@ Statistics_Models.apply_SARIMA(data_clean, p, d, q, 'Target_variable')
 Statistics_Models.apply_SARIMAX(data_clean, p, d, q, 'Target_variable', exog_vars=['variable_1', 'variable_2', 'variable_3'])
 
 ```
+
+---
 
 Perform exponential smoothing for time series forecasting:
 
@@ -67,6 +71,8 @@ Exponential_Smoothening.exponential_smoothening(data_clean['Target_variable'])
 
 ```
 
+---
+
 Augmented Dickey-Fuller Test:
 
 ```bash
@@ -76,6 +82,8 @@ from automate.augmented_dickey_fuller_test import Augmented_Dickey_Fuller_Test
 Augmented_Dickey_Fuller_Test.check_stationarity(data_clean['Target_variable'])
 
 ```
+
+---
 
 Convert your time series data to stationary:
 
