@@ -49,9 +49,9 @@ Use ARIMA, SARIMA, or SARIMAX for time series analysis:
 
 from automate.statistical_models import Statistics_Models
 
-Statistics_Models.apply_ARIMA(data_clean, 1, 1, 0, 'Close')
-Statistics_Models.apply_SARIMA(data_clean, 1, 1, 0, 'Close')
-Statistics_Models.apply_SARIMAX(data_clean, 1, 1, 0, 'Close', exog_vars=['Open', 'High', 'Low'])
+Statistics_Models.apply_ARIMA(data_clean, 1, 1, 0, 'Target_variable ')
+Statistics_Models.apply_SARIMA(data_clean, 1, 1, 0, 'Target_variable ')
+Statistics_Models.apply_SARIMAX(data_clean, 1, 1, 0, 'Target_variable ', exog_vars=['variable_1', 'variable_2', 'variable_3'])
 
 ```
 
@@ -61,9 +61,9 @@ Perform exponential smoothing for time series forecasting:
 
 from automate.exponential_smoothening import Exponential_Smoothening
 
-Exponential_Smoothening.simple_exponential_smoothening(data_clean['Close'])
-Exponential_Smoothening.holt_smoothening(data_clean['Close'])
-Exponential_Smoothening.exponential_smoothening(data_clean['Close'])
+Exponential_Smoothening.simple_exponential_smoothening(data_clean['Target_variable '])
+Exponential_Smoothening.holt_smoothening(data_clean['Target_variable'])
+Exponential_Smoothening.exponential_smoothening(data_clean['Target_variable'])
 
 ```
 
@@ -73,7 +73,7 @@ Augmented Dickey-Fuller Test:
 
 from automate.augmented_dickey_fuller_test import Augmented_Dickey_Fuller_Test
 
-Augmented_Dickey_Fuller_Test.check_stationarity(data_clean['Close'])
+Augmented_Dickey_Fuller_Test.check_stationarity(data_clean['Target_variable'])
 
 ```
 
@@ -83,7 +83,7 @@ Convert your time series data to stationary:
 
 from automate.augmented_dickey_fuller_test import Stationary_Converter
 
-stationary_data = Stationary_Converter.convert_to_stationary(data_clean['Close'])
+stationary_data = Stationary_Converter.convert_to_stationary(data_clean['Target_variable '])
 Augmented_Dickey_Fuller_Test.check_stationarity(stationary_data)
 
 ```
