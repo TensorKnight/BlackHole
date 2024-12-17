@@ -1,5 +1,5 @@
 from statsmodels.tsa.api import SimpleExpSmoothing, Holt, ExponentialSmoothing
-from automate.metrics import MetricsPrinter
+from automate.evaluation import metrics
 
 def simple_exponential_smoothening(target):
     time_series = target
@@ -7,7 +7,7 @@ def simple_exponential_smoothening(target):
     model_single_fit = model_single.fit()
     actual = time_series.values
     predicted = model_single_fit.fittedvalues.values
-    MetricsPrinter.metric_printer(actual, predicted)
+    metrics.display_metrics(actual, predicted)
 
 def holt_smoothening(target):
     time_series = target
@@ -15,7 +15,7 @@ def holt_smoothening(target):
     model_double_fit = model_double.fit()
     actual = time_series.values
     predicted = model_double_fit.fittedvalues.values
-    MetricsPrinter.metric_printer(actual, predicted)
+    metrics.display_metrics(actual, predicted)
 
 def exponential_smoothening(target):
     time_series = target
@@ -23,4 +23,4 @@ def exponential_smoothening(target):
     model_triple_fit = model_triple.fit()
     actual = time_series.values
     predicted = model_triple_fit.fittedvalues.values
-    MetricsPrinter.metric_printer(actual, predicted)
+    metrics.display_metrics(actual, predicted)

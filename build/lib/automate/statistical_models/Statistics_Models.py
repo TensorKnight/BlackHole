@@ -1,5 +1,5 @@
 from statsmodels.tsa.arima.model import ARIMA
-from automate.metrics import MetricsPrinter
+from automate.evaluation import metrics
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 def apply_ARIMA(data, p, d, q, target_variable_string):
@@ -11,9 +11,7 @@ def apply_ARIMA(data, p, d, q, target_variable_string):
     model = ARIMA(train_series, order=(p, d, q))
     model_fit = model.fit()
     forecast = model_fit.forecast(steps=len(test_series))[:len(test_series)]
-    MetricsPrinter.metric_printer(test_series, forecast)
-
-
+    metrics.display_metrics(test_series, forecast)
 
 def apply_SARIMA(data, p, d, q, target_variable_string):
     train_size = int(len(data) * 0.8)
@@ -24,7 +22,7 @@ def apply_SARIMA(data, p, d, q, target_variable_string):
     sarima_model = ARIMA(train_series, order=(p, d, q), seasonal_order=(0, 0, 0, 12))
     sarima_result = sarima_model.fit()
     forecast = sarima_result.forecast(steps=len(test_series))
-    MetricsPrinter.metric_printer(test_series, forecast)
+    metrics.display_metrics(test_series, forecast)
 
 def apply_SARIMAX(data, p, d, q, target_variable_string, exog_vars=None):
     train_size = int(len(data) * 0.8)
@@ -42,4 +40,4 @@ def apply_SARIMAX(data, p, d, q, target_variable_string, exog_vars=None):
     )
     sarimax_result = sarimax_model.fit()
     forecast = sarimax_result.forecast(steps=len(test_series), exog=exog_test)
-    MetricsPrinter.metric_printer(test_series, forecast)
+    metrics.display_metrics(test_series, forecast)

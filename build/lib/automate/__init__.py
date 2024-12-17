@@ -1,7 +1,7 @@
 from .augmented_dickey_fuller_test import Augmented_Dickey_Fuller_Test, Stationary_Converter
 from .exponential_smoothening import Exponential_Smoothening
 from .machine_learning import Machine_Learning_Models
-from .metrics import MetricsPrinter
+from .evaluation import metrics
 from .DataPreprocessor import Null_Value_Remover
 from .statistical_models import Statistics_Models
 
@@ -10,7 +10,7 @@ __all__ = [
     "Stationary_Converter",
     "Exponential_Smoothening",
     "Machine_Learning_Models",
-    "MetricsPrinter",
+    "metrics",
     "Null_Value_Remover",
     "Statistics_Models",
 ]
