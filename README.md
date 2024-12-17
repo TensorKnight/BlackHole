@@ -157,17 +157,17 @@ The function will allow you to print the evaluation metrics based on the problem
 (1) Import
 
 ```bash
-from automate.evaluation.metrics import print_metrics
+from automate.evaluation import metrics
 ```
 
 (2) Use the function with your data:
 
 ```bash
 # Example for regression task
-print_metrics(y_test, y_pred)
+metrics.display_metrics(y_test, y_pred)
 
 # Example for classification task
-print_metrics(y_true, y_pred)
+metrics.display_metrics(y_true, y_pred)
 
 ```
 
